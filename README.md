@@ -1,10 +1,10 @@
 # MCGVwatcher
 
 ## 構想
-說明一下這用途用MC專業版都知道有GlobalVariable.dll可以在程式碼會傳值。
-那這個程式目的就是從外部取ＭＣ某個直，如果你有ＭＣ呼叫 GVSetNamedString("目標名稱",“字串內容”);
+說明一下這用途用MultiCharts專業版都知道有GlobalVariable.dll可以在程式碼會傳值。
+那這個程式目的就是從外部取ＭＣ某個直，如果你有MultiCharts呼叫 GVSetNamedString("目標名稱",“字串內容”);
 那這程式監控該值變化幫你發送到某網址，目前是設定給ifttt line通知用。
-有何好處？一般來說寫檔案就佔用IO 程式多個開啟就會搶IO 那MC寫檔案你又去開檔案讀取很容易打架並且當機。
+有何好處？一般來說寫檔案就佔用IO 程式多個開啟就會搶IO 那MultiCharts寫檔案你又去開檔案讀取很容易打架並且當機。
 那這個是直接呼叫GlobalVariable.dll 所以也是跟他要資料速度極快沒有IO搶佔問題。
 那你會問我為何不寫Dll呼叫即可？因為寫過遇到很多問題且這樣並沒有辦法簡化callback速度與相依性還是在還是有可能造成ＭＣ檔機。
 程式很小22K c# .net framework 4寫的win10以直接執行。
@@ -23,14 +23,12 @@
 
 ## 檔案清單
 
-下載位置： https://drive.google.com/file/d/1xl-y5jR-2kK2GdOWm_LjvV1voIZzdfjz/view?usp=sharing
+下載位置： https://github.com/SDpower/MCGVwatcher/releases
 ![](https://i.imgur.com/47MTMD0.png)
 
 * MCGVwatcher.exe 主程式
-    * 檔案檢核碼 SHA256:844c2e774721c5b91c6ae378e9948873ce8611de142a515d23a2a966d85c3ed9
 * MCGVwatcher.ini 設定擋自動產生
-* Newtonsoft.Json.dll 微軟套件json不知道為何這樣大有其他建議歡迎提供
-    * 檔案檢核碼 SHA256:b624949df8b0e3a6153fdfb730a7c6f4990b6592ee0d922e1788433d276610f3
+* Newtonsoft.Json.dll 微軟套件json
 
 ### 使用方式
 
@@ -55,7 +53,7 @@
 設定輪詢的間隔。
 ![](https://i.imgur.com/kFzbeKe.png)
 
-### MC 範例
+### MultiCharts 範例
 
 ![](https://i.imgur.com/BfZFUjz.png)
 
@@ -79,9 +77,9 @@ end;
 
 使用重點：
 GVSetNamedString 這個就是設定一個字串，並附於他字串值。你可以看範例一樣附加時間
-DateTimeToString_Ms(DateTime) 這樣可以更明確知道MC發出的時間。
+DateTimeToString_Ms(DateTime) 這樣可以更明確知道MultiCharts發出的時間。
 
-依照我這下圖就是ＭＣ發出09:26:24.503 監控程式收到 09:26:24.513 總共只耗費10ms. 
+依照我這下圖就是MultiCharts發出09:26:24.503 監控程式收到 09:26:24.513 總共只耗費10ms. 
 ![](https://i.imgur.com/XaQ9AMB.png)
 
 你有多組策略就多開視窗設定不同監看值：
