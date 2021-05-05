@@ -2,14 +2,13 @@
 
 ## 構想
 說明一下這用途用MultiCharts專業版都知道有GlobalVariable.dll可以在程式碼會傳值。
-那這個程式目的就是從外部取MultiCharts某個直，如果你有MultiCharts呼叫 GVSetNamedString("目標名稱",“字串內容”);
+那這個程式目的就是從外部取MultiCharts的值，如果你有MultiCharts呼叫 GVSetNamedString("目標名稱",“字串內容”);
 那這程式監控該值變化幫你發送到某網址，目前是設定給ifttt line通知用。
 有何好處？一般來說寫檔案就佔用IO 程式多個開啟就會搶IO 那MultiCharts寫檔案你又去開檔案讀取很容易打架並且當機。
 那這個是直接呼叫GlobalVariable.dll 所以也是跟他要資料速度極快沒有IO搶佔問題。
 那你會問我為何不寫Dll呼叫即可？因為寫過遇到很多問題且這樣並沒有辦法簡化callback速度與相依性還是在還是有可能造成MultiCharts檔機。
 程式很小22K c# .net framework 4寫的win10以直接執行。
 我事業外做這個的寫過太多程式以前是從一開始群益開放API到後續百家綻放。
-目前待業中所以就全力開發。
 
 ## 目前程式優點
 * 程式沒有依賴性MultiCharts或此程式當機都沒影任何干擾。
@@ -90,6 +89,6 @@ DateTimeToString_Ms(DateTime) 這樣可以更明確知道MultiCharts發出的時
 ### IFTTT Line
 
 這裡選用IFTTT是因爲如果自行串接Line通知還要一直更新token 實在很麻煩。
-這裡就不多做說明請上網搜尋：https://www.google.com/search?client=firefox-b-d&q=line+ifttt
+這裡就不多做說明請上網搜尋：https://www.google.com/search?q=line+ifttt
 最後設定可以改成這樣
 ![](https://i.imgur.com/xS6Gclg.png)
