@@ -89,7 +89,7 @@ DateTimeToString_Ms(DateTime) 這樣可以更明確知道MultiCharts發出的時
 
 ### IFTTT Line
 
-這裡選用IFTTT是因誤蕤果自行串接Line通知還要一直更新token 實在很麻煩。
+這裡選用IFTTT是因爲如果自行串接Line通知還要一直更新token 實在很麻煩。
 這裡就不多做說明請上網搜尋：https://www.google.com/search?client=firefox-b-d&q=line+ifttt
 最後設定可以改成這樣
 ![](https://i.imgur.com/xS6Gclg.png)
