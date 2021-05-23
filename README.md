@@ -92,3 +92,17 @@ DateTimeToString_Ms(DateTime) 這樣可以更明確知道MultiCharts發出的時
 這裡就不多做說明請上網搜尋：https://www.google.com/search?q=line+ifttt
 最後設定可以改成這樣
 ![](https://i.imgur.com/xS6Gclg.png)
+
+
+### MQTT
+
+  新增分頁式設定與支援MQTT，使用此功能最好避免與HTTP一起使用。用MQTT為了做大量資料發送用。
+![](https://i.imgur.com/R3PK5QX.png)
+  
+#### 使用方式
+
+  只要在監看變數內容格式化成 "::" 分隔符號，前段為Mqtt的發送主題（topic）後段為內容（payload）。
+  這個並不會紀錄在發送區塊。
+~~~
+/topic/123/::{"body":"123"}
+~~~
