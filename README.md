@@ -22,6 +22,9 @@
 
 ## 檔案清單
 
+[GlobalVariable 原廠連結](https://www.multicharts.com/discussion/viewtopic.php?t=2483#p8174)
+自行下載Global Variable22.zip  再將 GV 2-2.ELD 用PowerLanguage匯入。
+
 下載位置： https://github.com/SDpower/MCGVwatcher/releases
 ![](https://i.imgur.com/47MTMD0.png)
 
